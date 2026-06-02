@@ -101,7 +101,7 @@ export const projects: Project[] = [
       '/work/la-copa/still2.jpg',
     ],
     bts: [
-      '/work/la-copa/bts1.jpg',
+      '/work/la-copa/bts7.jpg',
       '/work/la-copa/bts2.jpg',
       '/work/la-copa/bts3.jpg',
       '/work/la-copa/bts4.jpg',
