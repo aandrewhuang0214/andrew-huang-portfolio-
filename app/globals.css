@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Font variables ──────────────────────────────── */
+:root {
+  --font-display: 'Bebas Neue';
+  --font-condensed: 'Barlow Condensed';
+  --font-body: 'Barlow';
+}
+
+/* ─── Base reset ──────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #FF4500 #0A0A0A;
+}
+
+html::-webkit-scrollbar { width: 3px; }
+html::-webkit-scrollbar-track { background: #0A0A0A; }
+html::-webkit-scrollbar-thumb { background: #FF4500; }
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Film grain overlay ──────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  inset: -200%;
+  width: 400%;
+  height: 400%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.038;
+  animation: grain 0.6s steps(1) infinite;
+  will-change: transform;
+}
+
+@keyframes grain {
+  0%   { transform: translate(0,     0);    }
+  10%  { transform: translate(-5%,  -10%);  }
+  20%  { transform: translate(-15%,  5%);   }
+  30%  { transform: translate(7%,  -25%);   }
+  40%  { transform: translate(-5%,  25%);   }
+  50%  { transform: translate(-15%, 10%);   }
+  60%  { transform: translate(15%,   0%);   }
+  70%  { transform: translate(0%,   15%);   }
+  80%  { transform: translate(3%,   35%);   }
+  90%  { transform: translate(-10%, 10%);   }
+  100% { transform: translate(0,     0);    }
+}
+
+/* ─── Orange glow text ────────────────────────────── */
+.text-glow {
+  color: #FF4500;
+  text-shadow:
+    0 0 20px rgba(255, 69, 0, 1),
+    0 0 40px rgba(255, 69, 0, 0.7),
+    0 0 80px rgba(255, 60, 0, 0.4),
+    0 0 160px rgba(255, 50, 0, 0.15);
+}
+
+.text-glow-subtle {
+  color: #FF4500;
+  text-shadow:
+    0 0 10px rgba(255, 69, 0, 0.6),
+    0 0 30px rgba(255, 69, 0, 0.3);
+}
+
+/* Barely-there glow — just plain orange, almost no halation */
+.text-glow-minimal {
+  color: #FF4500;
+  text-shadow:
+    0 0 8px rgba(255, 69, 0, 0.18),
+    0 0 20px rgba(255, 69, 0, 0.07);
+}
+
+/* ─── Section divider line ────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid #1E1E1E;
+}
+
+/* ─── No-select utility ───────────────────────────── */
+.no-select { user-select: none; }
+
+/* ─── Cinematic image treatment ──────────────────── */
+.project-thumb {
+  filter: brightness(0.85) contrast(1.05) saturate(0.9);
+  transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-thumb:hover {
+  filter: brightness(0.95) contrast(1.08) saturate(1.0);
+}
+
+/* ─── Form inputs ─────────────────────────────────── */
+.form-input {
+  background: transparent;
+  border: 1px solid #2A2A2A;
+  color: #ffffff;
+  outline: none;
+  width: 100%;
+  font-family: var(--font-body);
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #FF4500;
+}
+
+.form-input::placeholder {
+  color: #444444;
+}
+
+/* ─── Scrollbar on textareas ──────────────────────── */
+textarea {
+  resize: vertical;
+  scrollbar-width: thin;
+  scrollbar-color: #333 #111;
+}
