@@ -18,13 +18,6 @@ export default function GalleryPage({
   images,
   singleColumn = false,
 }: GalleryPageProps) {
-  // Group images into rows of 1 (singleColumn) or 2
-  const chunkSize = singleColumn ? 1 : 2
-  const rows: string[][] = []
-  for (let i = 0; i < images.length; i += chunkSize) {
-    rows.push(images.slice(i, i + chunkSize))
-  }
-
   return (
     <div className="bg-black min-h-screen flex flex-col">
 
@@ -66,34 +59,23 @@ export default function GalleryPage({
         </h1>
       </motion.div>
 
-      {/* ─── Image grid ───────────────────────────────────────── */}
-      <div className="px-8 md:px-12 pb-20 flex flex-col gap-3">
-        {rows.map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className={`flex gap-3 ${row.length === 1 ? 'justify-center' : ''}`}
+      {/* ─── Images — full width, stacked ─────────────────────── */}
+      <div className={`pb-20 flex flex-col gap-3 ${singleColumn ? 'px-8 md:px-12 items-center' : ''}`}>
+        {images.map((src, i) => (
+          <motion.div
+            key={i}
+            className={singleColumn ? 'w-full md:w-1/2' : 'w-full'}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
           >
-            {row.map((src, i) => (
-              <motion.div
-                key={i}
-                className={row.length === 1 ? 'w-1/2' : 'flex-1 min-w-0'}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  ease: [0.16, 1, 0.3, 1],
-                  delay: rowIndex * 0.1 + i * 0.06,
-                }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={src}
-                  alt={`${label} ${rowIndex * 2 + i + 1}`}
-                  className="w-full h-auto block"
-                />
-              </motion.div>
-            ))}
-          </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src}
+              alt={`${label} ${i + 1}`}
+              className="w-full h-auto block"
+            />
+          </motion.div>
         ))}
       </div>
 
