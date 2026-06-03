@@ -50,30 +50,36 @@ export default function HeroSection() {
       />
 
       {/* ─── 3×3 grid overlay — each active cell links to its project ─────── */}
+      {/* On mobile: grid lines + labels are visible. On desktop: invisible until hover. */}
       <div className="absolute inset-0 z-[15] grid grid-cols-3 grid-rows-3">
         {/* Row 1 */}
-        <Link href="/work/stay-frosty"    className="group relative overflow-hidden" aria-label="Stay Frosty">
-          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-transparent group-hover:border-orange/40 transition-all duration-300" />
+        <Link href="/work/stay-frosty" className="group relative overflow-hidden" aria-label="Stay Frosty">
+          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-white/[0.12] md:border-transparent group-hover:border-orange/40 transition-all duration-300" />
+          <span className="md:hidden absolute bottom-2 left-2 font-condensed text-[8px] tracking-label text-white/50 uppercase leading-tight">Stay Frosty</span>
         </Link>
-        <div /> {/* blank */}
+        <div className="border border-white/[0.12] md:border-0" />
         <Link href="/work/missing-u-asumuh" className="group relative overflow-hidden" aria-label="Missing U — Asumuh">
-          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-transparent group-hover:border-orange/40 transition-all duration-300" />
+          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-white/[0.12] md:border-transparent group-hover:border-orange/40 transition-all duration-300" />
+          <span className="md:hidden absolute bottom-2 left-2 font-condensed text-[8px] tracking-label text-white/50 uppercase leading-tight">Missing U</span>
         </Link>
 
         {/* Row 2 */}
-        <div /> {/* blank */}
-        <Link href="/work/la-copa"        className="group relative overflow-hidden" aria-label="La Copa de Ángeles">
-          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-transparent group-hover:border-orange/40 transition-all duration-300" />
+        <div className="border border-white/[0.12] md:border-0" />
+        <Link href="/work/la-copa" className="group relative overflow-hidden" aria-label="La Copa de Ángeles">
+          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-white/[0.12] md:border-transparent group-hover:border-orange/40 transition-all duration-300" />
+          <span className="md:hidden absolute bottom-2 left-2 font-condensed text-[8px] tracking-label text-white/50 uppercase leading-tight">La Copa</span>
         </Link>
-        <div /> {/* blank */}
+        <div className="border border-white/[0.12] md:border-0" />
 
         {/* Row 3 */}
-        <Link href="/work/minu-001"       className="group relative overflow-hidden" aria-label="Minu 001 Hoodie Launch">
-          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-transparent group-hover:border-orange/40 transition-all duration-300" />
+        <Link href="/work/minu-001" className="group relative overflow-hidden" aria-label="Minu 001 Hoodie Launch">
+          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-white/[0.12] md:border-transparent group-hover:border-orange/40 transition-all duration-300" />
+          <span className="md:hidden absolute bottom-2 left-2 font-condensed text-[8px] tracking-label text-white/50 uppercase leading-tight">Minu 001</span>
         </Link>
-        <div /> {/* blank */}
+        <div className="border border-white/[0.12] md:border-0" />
         <Link href="/work/ruhveda" className="group relative overflow-hidden" aria-label="Mango Muse Launch — Ruhveda">
-          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-transparent group-hover:border-orange/40 transition-all duration-300" />
+          <div className="absolute inset-0 bg-orange/0 group-hover:bg-orange/10 border border-white/[0.12] md:border-transparent group-hover:border-orange/40 transition-all duration-300" />
+          <span className="md:hidden absolute bottom-2 left-2 font-condensed text-[8px] tracking-label text-white/50 uppercase leading-tight">Ruhveda</span>
         </Link>
       </div>
 
