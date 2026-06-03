@@ -59,25 +59,43 @@ export default function GalleryPage({
         </h1>
       </motion.div>
 
-      {/* ─── Images — full width, stacked ─────────────────────── */}
-      <div className={`pb-20 flex flex-col gap-3 ${singleColumn ? 'px-8 md:px-12 items-center' : ''}`}>
-        {images.map((src, i) => (
-          <motion.div
-            key={i}
-            className={singleColumn ? 'w-full md:w-1/2' : 'w-full'}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={src}
-              alt={`${label} ${i + 1}`}
-              className="w-full h-auto block"
-            />
-          </motion.div>
-        ))}
-      </div>
+      {/* ─── Images ───────────────────────────────────────────
+            singleColumn (impact): always centred, half-width on desktop
+            default (stills/bts):  1-col stacked on mobile, 2-col grid on desktop  */}
+      {singleColumn ? (
+        <div className="px-8 md:px-12 pb-20 flex flex-col items-center gap-3">
+          {images.map((src, i) => (
+            <motion.div
+              key={i}
+              className="w-full md:w-1/2"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={src} alt={`${label} ${i + 1}`} className="w-full h-auto block" />
+            </motion.div>
+          ))}
+        </div>
+      ) : (
+        <div className="px-8 md:px-12 pb-20 grid grid-cols-1 md:grid-cols-2 gap-3">
+          {images.map((src, i) => {
+            const isLastOdd = i === images.length - 1 && images.length % 2 !== 0
+            return (
+              <motion.div
+                key={i}
+                className={isLastOdd ? 'md:col-span-2 md:w-1/2 md:mx-auto' : ''}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt={`${label} ${i + 1}`} className="w-full h-auto block" />
+              </motion.div>
+            )
+          })}
+        </div>
+      )}
 
     </div>
   )
