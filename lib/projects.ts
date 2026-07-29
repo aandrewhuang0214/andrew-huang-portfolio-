@@ -96,10 +96,7 @@ export const projects: Project[] = [
     roles:       'DIRECTOR / EXECUTIVE PRODUCER',
     format:      'Commercial',
     description: "The second collaboration between USC's Haute Magazine and Nike LA.\n\nAny Block. Any Hour. Game On.\n\nIn LA, soccer isn't confined to the pitch. It lives in the streets, in music, in conversation, and in style. It's a cultural language that transcends neighborhoods, backgrounds, and generations.\n\nFollowing our players through some of LA's most iconic cultural pockets, La Copa de Ángeles is a reminder that despite our differences, we're connected by the rhythms we share.",
-    showcaseImages: [
-      '/work/la-copa/still1.jpg',
-      '/work/la-copa/still2.jpg',
-    ],
+    youtubeId:   'G2nlp_0HowY',
     bts: [
       '/work/la-copa/bts7.jpg',
       '/work/la-copa/bts2.jpg',
@@ -121,9 +118,7 @@ export const projects: Project[] = [
     roles:       'DIRECTOR',
     format:      'Commercial',
     description: "A collaboration between USC's Haute Magazine and Ruhveda.\n\nThis ad highlights the Mango Muse fragrance and announces Ruhveda's release in Sephora locations nationwide.",
-    showcaseImages: [
-      '/work/ruhveda/still1.jpg',
-    ],
+    youtubeId:   'Rh12ppI2oFs',
   },
   {
     id:          'stay-frosty',
