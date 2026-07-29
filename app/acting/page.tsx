@@ -1,19 +1,18 @@
 'use client'
 
 import { useRef } from 'react'
+import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 const YOUTUBE_VIDEO_ID = 'HLlIvd5VMt8'
-const HEADSHOT_HREF    = '/headshot.jpg'   // replace with your real headshot path/URL
-
 const links = [
   {
     label: 'Headshot',
-    sublabel: 'View / Download',
-    href: HEADSHOT_HREF,
-    download: true,
+    sublabel: 'View Gallery',
+    href: '/acting/headshots',
+    download: false,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="3" y="3" width="18" height="18" rx="1" />
@@ -38,26 +37,11 @@ const links = [
   },
 ]
 
-function LinkCard({
-  item,
-  index,
-  inView,
-}: {
-  item: (typeof links)[0]
-  index: number
-  inView: boolean
-}) {
+const cardClass = "group flex items-center gap-5 border border-border hover:border-orange px-6 py-5 transition-all duration-400 ease-cinematic flex-1"
+
+function CardInner({ item }: { item: (typeof links)[0] }) {
   return (
-    <motion.a
-      href={item.href}
-      download={item.download || undefined}
-      target={item.download ? undefined : '_blank'}
-      rel={item.download ? undefined : 'noopener noreferrer'}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 + index * 0.1 }}
-      className="group flex items-center gap-5 border border-border hover:border-orange px-6 py-5 transition-all duration-400 ease-cinematic flex-1"
-    >
+    <>
       <span className="text-text-secondary group-hover:text-orange transition-colors duration-300 shrink-0">
         {item.icon}
       </span>
@@ -74,6 +58,45 @@ function LinkCard({
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
       </span>
+    </>
+  )
+}
+
+function LinkCard({
+  item,
+  index,
+  inView,
+}: {
+  item: (typeof links)[0]
+  index: number
+  inView: boolean
+}) {
+  const motionProps = {
+    initial: { opacity: 0, y: 20 },
+    animate: inView ? { opacity: 1, y: 0 } : {},
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 + index * 0.1 },
+  }
+
+  if (!item.download && item.href.startsWith('/acting')) {
+    return (
+      <motion.div {...motionProps} className="flex-1">
+        <Link href={item.href} className={cardClass}>
+          <CardInner item={item} />
+        </Link>
+      </motion.div>
+    )
+  }
+
+  return (
+    <motion.a
+      href={item.href}
+      download={item.download || undefined}
+      target={item.download ? undefined : '_blank'}
+      rel={item.download ? undefined : 'noopener noreferrer'}
+      {...motionProps}
+      className={cardClass}
+    >
+      <CardInner item={item} />
     </motion.a>
   )
 }
