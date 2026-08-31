@@ -32,6 +32,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             src={project.src}
             alt={project.title}
             className="w-full h-full object-cover project-thumb"
+            style={project.thumbnailPosition ? { objectPosition: project.thumbnailPosition } : undefined}
           />
         </motion.div>
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-600" />

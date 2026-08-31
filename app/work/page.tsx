@@ -36,6 +36,7 @@ function WorkCard({ project, index }: { project: Project; index: number }) {
             src={project.src}
             alt={project.title}
             className="w-full h-full object-cover project-thumb"
+            style={project.thumbnailPosition ? { objectPosition: project.thumbnailPosition } : undefined}
           />
         </motion.div>
 

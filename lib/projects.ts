@@ -31,7 +31,8 @@ export interface Project {
   instagramPosts?: string[]  // multiple instagram.com/p/[id]/ posts, stacked in the panel
   stills?:         string[]   // production stills — links to /work/[id]/stills
   bts?:            string[]   // behind the scenes — links to /work/[id]/bts
-  thumbnail?:      string     // key art / poster (falls back to src)
+  thumbnail?:         string     // key art / poster (falls back to src)
+  thumbnailPosition?: string   // CSS object-position for grid crop, e.g. 'center 70%'
   showcaseImages?:    string[]  // shown in the right panel in place of a video
   caseStudyUrl?:      string    // external link — "Campaign Case Study" row
   impact?:            string[]  // impact images — links to /work/[id]/impact
@@ -142,8 +143,9 @@ export const projects: Project[] = [
     client:       'YG',
     category:     'MUSIC VIDEO',
     src:          '/work/gentlemens-club/thumbnail.jpg',
-    thumbnail:    '/work/gentlemens-club/thumbnail.jpg',
-    featured:     true,
+    thumbnail:          '/work/gentlemens-club/thumbnail.jpg',
+    thumbnailPosition:  'center 70%',
+    featured:           true,
     year:         '2025',
     roles:        'PRODUCER',
     format:       'Promo Video',
