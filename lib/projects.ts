@@ -94,7 +94,6 @@ export const projects: Project[] = [
     src:         '/work/la-copa/still2.jpg',
     thumbnail:   '/work/la-copa/still2.jpg',
     featured:    true,
-    year:        'COMING SOON',
     roles:       'DIRECTOR / EXECUTIVE PRODUCER',
     format:      'Commercial',
     description: "The second collaboration between USC's Haute Magazine and Nike LA.\n\nAny Block. Any Hour. Game On.\n\nIn LA, soccer isn't confined to the pitch. It lives in the streets, in music, in conversation, and in style. It's a cultural language that transcends neighborhoods, backgrounds, and generations.\n\nFollowing our players through some of LA's most iconic cultural pockets, La Copa de Ángeles is a reminder that despite our differences, we're connected by the rhythms we share.",
@@ -116,27 +115,11 @@ export const projects: Project[] = [
     src:         '/work/ruhveda/still1.jpg',
     thumbnail:   '/work/ruhveda/still1.jpg',
     featured:    false,
-    year:        'COMING SOON',
     roles:       'DIRECTOR',
     format:      'Commercial',
     description: "A collaboration between USC's Haute Magazine and Ruhveda.\n\nThis ad highlights the Mango Muse fragrance and announces Ruhveda's release in Sephora locations nationwide.",
     youtubeId:   'Rh12ppI2oFs',
   },
-  {
-    id:          'stay-frosty',
-    title:       'STAY FROSTY',
-    client:      'Creamy Boys Ice Cream',
-    category:    'COMMERCIAL',
-    src:         'https://img.youtube.com/vi/JpDXTRT4NyI/maxresdefault.jpg',
-    featured:    true,
-    year:        '2026',
-    roles:       'DIRECTOR / EXECUTIVE PRODUCER',
-    format:      'Commercial',
-    description: 'Who do you call when things get heated?\n\nA commercial announcing USC Haute Magazine\'s partnership with Creamy Boys Ice Cream. Set against a record-breaking LA heat wave, the spot follows the Creamy Boys as they rescue a defeated, drained city — one scoop at a time.',
-    youtubeId:   'JpDXTRT4NyI',
-  },
-
-  // ── MUSIC VIDEO ─────────────────────────────────────────────────────────
   {
     id:           'gentlemens-club-tour',
     title:        "THE GENTLEMEN'S CLUB TOUR PROMO",
@@ -156,6 +139,21 @@ export const projects: Project[] = [
       'DbOgtNTs_fL',
     ],
   },
+  {
+    id:          'stay-frosty',
+    title:       'STAY FROSTY',
+    client:      'Creamy Boys Ice Cream',
+    category:    'COMMERCIAL',
+    src:         'https://img.youtube.com/vi/JpDXTRT4NyI/maxresdefault.jpg',
+    featured:    true,
+    year:        '2026',
+    roles:       'DIRECTOR / EXECUTIVE PRODUCER',
+    format:      'Commercial',
+    description: 'Who do you call when things get heated?\n\nA commercial announcing USC Haute Magazine\'s partnership with Creamy Boys Ice Cream. Set against a record-breaking LA heat wave, the spot follows the Creamy Boys as they rescue a defeated, drained city — one scoop at a time.',
+    youtubeId:   'JpDXTRT4NyI',
+  },
+
+  // ── MUSIC VIDEO ─────────────────────────────────────────────────────────
   {
     id:           'missing-u-asumuh',
     title:        'MISSING U',
