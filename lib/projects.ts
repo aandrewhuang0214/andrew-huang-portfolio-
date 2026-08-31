@@ -27,7 +27,8 @@ export interface Project {
   youtubeId?:      string
   vimeoId?:        string
   videoSrc?:       string
-  instagramReel?:  string  // e.g. 'DKPqmfKpbjk' from instagram.com/reel/DKPqmfKpbjk/
+  instagramReel?:  string     // e.g. 'DKPqmfKpbjk' from instagram.com/reel/DKPqmfKpbjk/
+  instagramPosts?: string[]  // multiple instagram.com/p/[id]/ posts, stacked in the panel
   stills?:         string[]   // production stills — links to /work/[id]/stills
   bts?:            string[]   // behind the scenes — links to /work/[id]/bts
   thumbnail?:      string     // key art / poster (falls back to src)
@@ -136,6 +137,24 @@ export const projects: Project[] = [
 
   // ── MUSIC VIDEO ─────────────────────────────────────────────────────────
   {
+    id:           'gentlemens-club-tour',
+    title:        "THE GENTLEMEN'S CLUB TOUR PROMO",
+    client:       'YG',
+    category:     'MUSIC VIDEO',
+    src:          '/work/gentlemens-club/thumbnail.jpg',
+    thumbnail:    '/work/gentlemens-club/thumbnail.jpg',
+    featured:     true,
+    year:         '2025',
+    roles:        'PRODUCER',
+    format:       'Promo Video',
+    description:  "Tour announcement video for YG's The Gentlemen's Club with support from Mozzy, Kalan.Frfr, Natalie Nunn, and Chef Boy.",
+    instagramPosts: [
+      'DbEHoo0spwt',
+      'DbL8KVMsXWR',
+      'DbOgtNTs_fL',
+    ],
+  },
+  {
     id:           'missing-u-asumuh',
     title:        'MISSING U',
     displayTitle: 'MISSING U — ASUMUH',
@@ -146,7 +165,7 @@ export const projects: Project[] = [
     // YouTube max-res thumbnail — replace src with your custom still if preferred:
     // src: '/work/missing-u.jpg'
     src:          'https://img.youtube.com/vi/DwK4D5g_kko/maxresdefault.jpg',
-    featured:     true,
+    featured:     false,
     year:         '2025',
     roles:        'PRODUCER / ACTOR',
     format:       'Music Video',

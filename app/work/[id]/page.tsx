@@ -38,6 +38,25 @@ function VideoPanel({ project }: { project: Project }) {
       />
     )
   }
+  // Multiple Instagram posts — stacked, scrollable
+  if (project.instagramPosts && project.instagramPosts.length > 0) {
+    return (
+      <div className="absolute inset-0 overflow-y-auto bg-black flex flex-col">
+        {project.instagramPosts.map((id) => (
+          <div key={id} className="relative w-full flex-shrink-0" style={{ paddingBottom: '100%' }}>
+            <iframe
+              src={`https://www.instagram.com/p/${id}/embed/`}
+              title={`${project.title} — ${id}`}
+              allowFullScreen
+              scrolling="no"
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 'none' }}
+            />
+          </div>
+        ))}
+      </div>
+    )
+  }
   if (project.instagramReel) {
     return (
       <div className="absolute inset-0 flex items-center justify-center bg-black">
