@@ -144,7 +144,7 @@ export const projects: Project[] = [
     category:     'MUSIC VIDEO',
     src:          '/work/gentlemens-club/thumbnail.jpg',
     thumbnail:          '/work/gentlemens-club/thumbnail.jpg',
-    thumbnailPosition:  'center 70%',
+    thumbnailPosition:  'center 85%',
     featured:           true,
     year:         '2025',
     roles:        'PRODUCER',
