@@ -6,7 +6,7 @@ import { motion, useInView } from 'framer-motion'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
-const YOUTUBE_VIDEO_ID = 'HLlIvd5VMt8'
+const YOUTUBE_VIDEO_ID = 'YR_rO7z5Jac'
 const links = [
   {
     label: 'Headshot',
