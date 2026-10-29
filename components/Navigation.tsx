@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 // type: 'page' → Link to a route; 'hash' → scroll to section (home only)
 const navLinks = [
+  { label: 'Acting',  href: '/acting',   type: 'page' },
   { label: 'Work',    href: '/work',     type: 'page' },
   { label: 'About',   href: '/#about',   type: 'hash' },
-  { label: 'Acting',  href: '/acting',   type: 'page' },
   { label: 'Contact', href: '/#contact', type: 'hash' },
 ] as const
 

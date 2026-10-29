@@ -30,10 +30,10 @@ const barlowCondensed = Barlow_Condensed({
 })
 
 export const metadata: Metadata = {
-  title: 'Andrew Huang — Director, Producer, Actor',
+  title: 'Andrew Huang',
   description: 'Andrew Huang directs and produces narrative, commercial and music video content that blends cinematic storytelling with strategic intent.',
   openGraph: {
-    title: 'Andrew Huang — Director, Producer, Actor',
+    title: 'Andrew Huang',
     description: 'Cinematic storytelling with strategic intent. Based in Los Angeles, California.',
     type: 'website',
   },
